@@ -42,7 +42,7 @@ class App extends Component {
             <div>
                 <header className="App-header">
                     <h1 style={{fontWeight: 100,
-                        fontSize: '3em'}}>$ Le jeu du pendu #</h1>
+                        fontSize: '3em', color: '#e64b6c'}}>$ Le jeu du pendu #</h1>
                 </header>
 
                 {

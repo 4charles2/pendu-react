@@ -7,6 +7,8 @@ export default class AnimatePendu extends Component{
         return(
             <div className={"contain-animate-pendu"}>
                 <div className={"pendu"}>
+
+
                     <img className={"img-pendu"} src={require("./image/pendu.svg")} alt={"le pendu"} />
                 </div>
             </div>
