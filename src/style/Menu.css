@@ -1,0 +1,39 @@
+.center-child{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.title{
+    text-align: center;
+}
+.contain-column{
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.field{
+
+    /*border-radius: 5px;*/
+    /*margin: 5px;*/
+    /*box-shadow: inset 0px 0px 7px 1px #000;*/
+    width: 280px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: inset 0px 0px 7px 1px #000;
+    font-size: 1.5em;
+    padding: 15px;
+    text-align: center;
+}
+.button{
+    width: 300px;
+    height: 80px;
+    background-color: #458486;
+    color: white;
+    font-size: 1.5em;
+}
+.button:hover{
+    box-shadow: inset 1px 1px 15px 0px #000;
+}

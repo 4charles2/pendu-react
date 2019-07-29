@@ -1,0 +1,112 @@
+:root{
+    --letter-X: 27px;
+    --multiplcateur: 78.5px;
+}
+.keyboard {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 950px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.contain-touch{
+    background-image: url("../image/letter-background.png");
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+}
+.contain-touch::after{
+    content: '';
+    background-image: url("../image/letters_A-Z.png");
+    background-size: 2005%;
+    background-position: 27px 17px;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+.contain-touch:hover {
+    box-shadow: inset 0 0 14px 5px black;
+    border-radius: 15px;
+}
+#toucheA::after{
+    background-position-x: var(--letter-X);
+}
+#toucheB::after{
+    background-position-x: calc(var(--letter-X) -  var(--multiplcateur) );
+}
+#toucheC::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*2));
+}
+#toucheD::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*3));
+}
+#toucheE::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*4));
+}
+#toucheF::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*5));
+}
+#toucheG::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*6));
+}
+#toucheH::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*7));
+}
+#toucheI::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*8));
+}
+#toucheJ::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*9));
+}
+#toucheK::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*10));
+}
+#toucheL::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*11));
+}
+#toucheM::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*12));
+}
+#toucheN::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*13));
+}
+#toucheO::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*14));
+}
+#toucheP::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*15));
+}
+#toucheQ::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*16));
+}
+#toucheR::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*17));
+}
+#toucheS::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*18));
+}
+#toucheT::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*19));
+}
+#toucheU::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*20));
+}
+#toucheV::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*21));
+}
+#toucheW::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*22));
+}
+#toucheX::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*23));
+}
+#toucheY::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*24));
+}
+#toucheZ::after{
+    background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*25));
+}
