@@ -1,0 +1,8 @@
+.contain-keyword {
+    margin: auto;
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}

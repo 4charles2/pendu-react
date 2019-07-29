@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Pieces of Eight';
+  src: url("../police/Pieces of Eight.ttf");
+}
 body {
     margin: 0;
 }
@@ -12,6 +16,7 @@ body {
 }
 
 .App-header {
+  font-family: 'Pieces of Eight', cursive;
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -20,6 +25,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 25px;
 }
 .App-link {
   color: #61dafb;
