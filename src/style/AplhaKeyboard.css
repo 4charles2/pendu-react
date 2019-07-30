@@ -6,14 +6,9 @@
     display: flex;
     flex-flow: row wrap;
     max-width: 1344px;
-    width: 70%;
     justify-content: center;
     align-items: center;
     margin: auto;
-    border-top: 10px solid #282c34;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #282c34;
     padding: 10px;
 
 }

@@ -35,6 +35,9 @@
     left: 1px;
     width: 97%;
 }
+
+
+
 /*//Animation du mouvement de la corde*/
 @keyframes moveCorde {
     to{

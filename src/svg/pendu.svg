@@ -13,7 +13,7 @@
             </g>
             <path id="chausette-gauche" d="M38.68,262.74l-.76,14.15a4.45,4.45,0,0,1-8.86-.5l.75-14.1Z"
                   transform="translate(-5.68 -6.82)" fill="#b73c11"/>
-            <path id="jambe-droite-2" data-name="jambe-droite"
+            <path id="jambe-gauche" data-name="jambe-gauche"
                   d="M27.9,268.47c2.15-41.37,3.58-79.59,4.54-121.05a6.34,6.34,0,0,1,6.7-5.93,6.35,6.35,0,0,1,6.46,6.22c-1,41.45-2.4,79.58-4.55,121Z"
                   transform="translate(-5.68 -6.82)" fill="#2e2b33"/>
             <path id="chaussure-droite"

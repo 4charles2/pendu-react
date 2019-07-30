@@ -6,8 +6,10 @@ class App extends Component {
 
     constructor(props) {
         super(props)
-        this.joueurs = [];
-        this.state = {frame: 'menu'};
+        this.state = {
+            frame: 'menu',
+            joueurs: []
+        };
     }
 
     /**
@@ -29,9 +31,10 @@ class App extends Component {
     displayElement() {
         switch (this.state.frame) {
             case 'menu':
-                return <Menu ends={this.outputEvent} joueurs={this.joueurs}/>;
+                return <Menu ends={this.outputEvent} joueurs={this.state.joueurs}/>;
             case 'game':
-                return <Pendu/>
+                console.log(this.state.joueurs)
+                return <Pendu joueurs={this.state.joueurs} />
             default:
                 return <Menu/>
         }
@@ -44,11 +47,12 @@ class App extends Component {
                     <h1 style={{fontWeight: 100,
                         fontSize: '3em', color: '#e64b6c'}}>$ Le jeu du pendu #</h1>
                 </header>
-
+                <div>
                 {
                     /*Affiche le contenu voulue suivant les actions de l'utilisateur*/
                     this.displayElement()
                 }
+                </div>
                 <footer className="App-header">
                     <a className="App-link"
                        rel="noopener noreferrer"

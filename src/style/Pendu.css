@@ -1,0 +1,22 @@
+.clavier{
+    border-top: 10px solid #282c34;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #282c34;
+}
+.contain-keyword {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.contain-keyword .keyboard{
+    max-width: 100%;
+}
+.contain-keyword .contain-touch:hover {
+    box-shadow: none;
+    border-radius: 0;
+    user-select: none;
+    cursor: not-allowed;
+}

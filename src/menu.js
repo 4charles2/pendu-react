@@ -13,7 +13,6 @@ class Menu extends Component {
             menu: 'nbJoueur',
             joueurs: this.props.joueurs
         }
-        console.log(this.state);
     }
 
     /**
@@ -30,8 +29,6 @@ class Menu extends Component {
      * @param name
      */
     handleClickJoueur = (name) => {
-        console.log(this.state);
-        console.log(name);
         if(name !== '')
             this.setState((state) => ({
                   joueurs: [...state.joueurs, new Joueur(name)]
@@ -47,7 +44,7 @@ class Menu extends Component {
     displayMenu() {
         switch (this.state.menu) {
             case 'nbJoueur':
-                console.log(this)
+
                 return <NbJoueur onClick={this.handleClickMenu}/>;
             case 'NameJoueur':
                 return <NameJoueur numJoueur={this.state.joueurs.length + 1} onClick={this.handleClickJoueur}/>;
@@ -57,8 +54,6 @@ class Menu extends Component {
     }
     //Cette méthode est plus optimisé car elle arrete le rendu avant sa création si la condition est juste
     shouldComponentUpdate(nextProps, nextState, nextContext) {
-        console.log("Should");
-        console.log(nextState);
         if(this.state.nbJoueur === nextState.joueurs.length){
             this.props.ends({frame: 'game', joueurs: nextState.joueurs})
             return false
