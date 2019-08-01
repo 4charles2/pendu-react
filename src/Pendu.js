@@ -52,7 +52,7 @@ export default class Pendu extends Component {
     showMsg() {
         let msg = ''
         let type = ''
-        
+
         if (this.state.errorLetter.length > 9) {
             msg = "Dommage vous avez perdu"
             type = "perdu"
