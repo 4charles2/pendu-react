@@ -82,6 +82,7 @@ class Menu extends Component {
                          alt="potence de pendu" width={300}/>
                 </div>
                 {/*style={{position: 'absolute', right: '20%', top: '30%'}} */}
+                {/*Modifier entrie qu contiendra les trois meilleur score par une lecture du fichier scrore.json */}
                 <HallOfFame entries={entrie}/>
             </section>
         )

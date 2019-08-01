@@ -10,7 +10,6 @@
     align-items: center;
     margin: auto;
     padding: 10px;
-
 }
 .contain-touch{
     background-image: url("../image/letter-background.png");
@@ -34,81 +33,81 @@
     box-shadow: inset 0 0 12px 4px black;
     border-radius: 15px;
 }
-#toucheA::after{
+.touchA::after{
     background-position-x: var(--letter-X);
 }
-#toucheB::after{
+.touchB::after{
     background-position-x: calc(var(--letter-X) -  var(--multiplcateur) );
 }
-#toucheC::after{
+.touchC::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*2));
 }
-#toucheD::after{
+.touchD::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*3));
 }
-#toucheE::after{
+.touchE::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*4));
 }
-#toucheF::after{
+.touchF::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*5));
 }
-#toucheG::after{
+.touchG::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*6));
 }
-#toucheH::after{
+.touchH::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*7));
 }
-#toucheI::after{
+.touchI::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*8));
 }
-#toucheJ::after{
+.touchJ::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*9));
 }
-#toucheK::after{
+.touchK::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*10));
 }
-#toucheL::after{
+.touchL::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*11));
 }
-#toucheM::after{
+.touchM::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*12));
 }
-#toucheN::after{
+.touchN::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*13));
 }
-#toucheO::after{
+.touchO::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*14));
 }
-#toucheP::after{
+.touchP::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*15));
 }
-#toucheQ::after{
+.touchQ::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*16));
 }
-#toucheR::after{
+.touchR::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*17));
 }
-#toucheS::after{
+.touchS::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*18));
 }
-#toucheT::after{
+.touchT::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*19));
 }
-#toucheU::after{
+.touchU::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*20));
 }
-#toucheV::after{
+.touchV::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*21));
 }
-#toucheW::after{
+.touchW::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*22));
 }
-#toucheX::after{
+.touchX::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*23));
 }
-#toucheY::after{
+.touchY::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*24));
 }
-#toucheZ::after{
+.touchZ::after{
     background-position-x: calc(var(--letter-X) - (var(--multiplcateur)*25));
 }

@@ -1,0 +1,28 @@
+.popup{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: #c7c7c7;
+    border: 2px solid;
+    margin: auto;
+    left: 50vw;
+    top: 50vh;
+    box-shadow: inset 0px 0px 5px white;
+    font-size: 1.5em;
+    transform: translate(-50%, -50%);
+}
+.remove{
+    display: none;
+}
+.lost{
+
+}
+.win{
+
+}
+.play{
+
+}

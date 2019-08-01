@@ -1,58 +1,121 @@
-import React, {Component} from 'react'
+import React, {Component, ReactDOM} from 'react'
 import AlphaKeyboard from "./AlphaKeyboard"
 import AnimatePendu from "./AnimatePendu"
 
 import "./style/Pendu.css"
+import Popup from "./Popup";
 
-const HIDDEN = '⚔'
+
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+// Comme j'ai gérer les symboles via un elemnt after pas besoin de cette constante
+//Il est dans le code CSS
+// const HIDDEN = '⚔'
 
 export default class Pendu extends Component {
     state = {
         keyWord: this.generateKeyWord(),
-        errorLetter: 0,
-        foundLetter: '',
-        joueurs: this.props.joueurs
+        errorLetter: [],
+        foundLetter: [],
+        joueurs: this.props.joueurs,
+        currentJoueur: 0
     }
 
     handleKeyboardClick = (letter) => {
-        const keyWord = this.state.keyWord
-        if (keyWord.includes(letter))
-            this.setState({foundLetter: [...this.state.foundLetter, letter]})
-        else
-            this.setState({errorLetter: this.state.errorLetter + 1})
+        const {keyWord, currentJoueur, foundLetter, joueurs, errorLetter} = this.state
+
+        if (keyWord.includes(letter)) {
+
+            //Enregistre le score dans l'instance du Joueur
+            //SI le joueur n'a pas déjà trouvé cette lettre
+            if (!foundLetter.includes(letter)) {
+                joueurs[currentJoueur].setScore(1)
+
+                this.setState({
+                    foundLetter: [...foundLetter, ...Array.from(keyWord).filter((charact) => charact === letter)],
+                });
+            }
+        } else {
+            this.setState({errorLetter: [...errorLetter, letter]})
+            joueurs[currentJoueur].setScore(-1)
+        }
+        if (joueurs.length > 1)
+            this.setState({currentJoueur: (currentJoueur ? 0 : 1)})
+
     }
 
     generateKeyWord() {
         return dictionary[Math.floor(Math.random() * dictionary.length)].toUpperCase()
     }
 
+    //Cette méthode est plus optimisé car elle arrete le rendu avant sa création si la condition est juste
+    showMsg() {
+        let msg = ''
+        let type = ''
+        
+        if (this.state.errorLetter.length > 9) {
+            msg = "Dommage vous avez perdu"
+            type = "perdu"
+        } else if (this.state.foundLetter.length === this.state.keyWord.length) {
+            msg = "Bravo vous avez gagné"
+            type = "win"
+        } else if (this.state.joueurs.length > 1) {
+            type = "play"
+            msg = this.state.joueurs[this.state.currentJoueur].name + " c'est à vous de jouer"
+        }
+
+        return msg && <Popup msg={msg} className={type} time={3}/>
+    }
+
     render() {
-        const {keyWord, errorLetter} = this.state
+        const {keyWord, errorLetter, foundLetter} = this.state
+
         return (
             <div>
                 <Score joueurs={this.state.joueurs}/>
-                <AnimatePendu nbElt={errorLetter}/>
+                <AnimatePendu nbElt={errorLetter.length}/>
                 <div className={"contain-keyword"}>
-                    <AlphaKeyboard letters={Array.from(keyWord)}/>
+                    {/*Mot caché à deviner*/}
+                    <AlphaKeyboard
+                        showLetter={{
+                            effect: "hidden",
+                            letters: foundLetter
+                        }}
+                        letters={Array.from(keyWord)}
+                    />
                 </div>
-                <AlphaKeyboard className={"clavier"} onClick={this.handleKeyboardClick}/>
+                {/*Clavier pour entrer les lettres de l'alphabet*/}
+                <AlphaKeyboard
+                    // alphabet.map((letter) => {if(![...errorLetter, ...foundLetter].includes(letter)) return letter})
+                    showLetter={{
+                        effect: "click",
+                        letters: alphabet.filter(letter => ![...errorLetter, ...foundLetter].includes(letter))
+                    }}
+                    className={"clavier"}
+                    onClick={this.handleKeyboardClick}
+                />
+                {this.showMsg()}
             </div>
         )
     }
 }
 
 const Score = (props) =>
-    <div style={{borderLeft: '5px solid #458486', position: 'absolute', left: '10%',paddingLeft: '1px'}}>
+    <div style={{borderLeft: '5px solid #458486', position: 'absolute', left: '10%', paddingLeft: '1px'}}>
         {props.joueurs.map((joueur, index) =>
-        <dl style={{borderLeft: '1px solid black',
-            background: '#dedddd',
-            padding: '2px 11px'}}>
+            <dl style={{
+                borderLeft: '1px solid black',
+                background: '#dedddd',
+                padding: '2px 11px'
+            }}
+                key={index}
+            >
 
-            <dt>JOUEUR {index + 1}</dt>
-            <dd>{joueur.name}</dd>
-            <dd>Scores : {joueur.scores.current}</dd>
-        </dl>
-    )}
+                <dt>JOUEUR {index + 1}</dt>
+                <dd>{joueur.getName()}</dd>
+                <dd>Scores : {joueur.getScore()}</dd>
+            </dl>
+        )}
     </div>
 
 

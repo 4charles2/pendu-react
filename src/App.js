@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './style/App.css';
-import Menu from './menu'
+import Menu from './Menu'
 import Pendu from './Pendu'
 class App extends Component {
 
@@ -34,7 +34,7 @@ class App extends Component {
                 return <Menu ends={this.outputEvent} joueurs={this.state.joueurs}/>;
             case 'game':
                 console.log(this.state.joueurs)
-                return <Pendu joueurs={this.state.joueurs} />
+                return <Pendu ends={this.outputEvent} joueurs={this.state.joueurs} />
             default:
                 return <Menu/>
         }
