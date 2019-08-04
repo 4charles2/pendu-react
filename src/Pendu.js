@@ -1,4 +1,4 @@
-import React, {Component, ReactDOM} from 'react'
+import React, {Component} from 'react'
 import AlphaKeyboard from "./AlphaKeyboard"
 import AnimatePendu from "./AnimatePendu"
 
@@ -78,7 +78,9 @@ export default class Pendu extends Component {
             msg = this.state.joueurs[this.state.currentJoueur].name + " c'est à vous de jouer"
         }
 
-        return msg && <Popup key={type.length+this.state.errorLetter+this.state.foundLetter} buttons={buttons} msg={msg} className={type} time={3}/>
+        return msg &&
+            <Popup key={type.length + this.state.errorLetter + this.state.foundLetter} buttons={buttons} msg={msg}
+                   className={type} time={3}/>
     }
 
     handlePopClick = (even) => {

@@ -89,9 +89,10 @@ class Menu extends Component {
     }
 }
 
-const Regle = () => <div style={{'paddingLeft': '35px'}}>
+const Regle = () => <div style={{paddingLeft: '35px',flexBasis: '20%'}}>
     <h2>Règles du jeu : </h2>
-    <p>Le joueur qui aura le plus de points à la fin de la partie gagne</p>
+    <p>Le joueur qui devine la derniere lettre du mot gagne</p>
+
     <p>Le joueur qui perd est celui fait apparaitre le dernier element du pendu</p>
 </div>
 
