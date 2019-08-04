@@ -1,9 +1,6 @@
-.popup{
+.show-popup{
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
+    padding: 25px 25px 0px;
     border-radius: 5px;
     background-color: #c7c7c7;
     border: 2px solid;
@@ -17,6 +14,24 @@
 .remove{
     display: none;
 }
+.popup{
+    text-align: center;
+}
+
+.contain-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-popup{
+    display: block;
+    margin: 15px;
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 12px -3px #757575;
+    border: 1px solid #bbb3b3;
+}
 .lost{
 
 }
@@ -26,3 +41,4 @@
 .play{
 
 }
+

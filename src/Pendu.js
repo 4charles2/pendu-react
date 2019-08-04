@@ -13,12 +13,17 @@ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 // const HIDDEN = '⚔'
 
 export default class Pendu extends Component {
-    state = {
-        keyWord: this.generateKeyWord(),
-        errorLetter: [],
-        foundLetter: [],
-        joueurs: this.props.joueurs,
-        currentJoueur: 0
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            keyWord: this.generateKeyWord(),
+            errorLetter: [],
+            foundLetter: [],
+            joueurs: this.props.joueurs,
+            currentJoueur: 0
+        }
+        this.baseState = this.state;
     }
 
     handleKeyboardClick = (letter) => {
@@ -52,19 +57,41 @@ export default class Pendu extends Component {
     showMsg() {
         let msg = ''
         let type = ''
+        let buttons = false
 
         if (this.state.errorLetter.length > 9) {
             msg = "Dommage vous avez perdu"
             type = "perdu"
+            buttons = [{msg: "recommencer", onClick: this.handlePopClick}, {
+                msg: "quitter",
+                onClick: this.handlePopClick
+            }]
         } else if (this.state.foundLetter.length === this.state.keyWord.length) {
             msg = "Bravo vous avez gagné"
             type = "win"
+            buttons = [{msg: "recommencer", onClick: this.handlePopClick}, {
+                msg: "quitter",
+                onClick: this.handlePopClick
+            }]
         } else if (this.state.joueurs.length > 1) {
             type = "play"
             msg = this.state.joueurs[this.state.currentJoueur].name + " c'est à vous de jouer"
         }
 
-        return msg && <Popup msg={msg} className={type} time={3}/>
+        return msg && <Popup key={type.length+this.state.errorLetter+this.state.foundLetter} buttons={buttons} msg={msg} className={type} time={3}/>
+    }
+
+    handlePopClick = (even) => {
+        console.log("La clé du component penduva changer apres le click sur les bouttons du popup")
+        if (even === "recommencer") {
+            this.setState(this.baseState)
+            this.setState({keyWord: this.generateKeyWord()})
+            this.state.joueurs.map((joueur) =>
+                joueur.saveScore()
+            )
+        } else
+            this.props.ends({frame: 'menu', joueurs: []})
+        console.log(even)
     }
 
     render() {

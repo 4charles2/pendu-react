@@ -76,10 +76,10 @@ class Menu extends Component {
             <section className={"center-child"} style={{display: 'flex', 'flexFlow': 'row wrap'}}>
                 <Regle/>
                 {/*style={{position: 'relative'}}*/}
-                <div style={{'flexGrow': '1'}}>
+                <div style={{'flexBasis': '50%'}}>
                     {this.displayMenu()}
                     <img style={{margin: 'auto', display: 'block'}} src={require("./image/potence_pendu.png")}
-                         alt="potence de pendu" width={300}/>
+                         alt="potence de pendu" width={"50%"}/>
                 </div>
                 {/*style={{position: 'absolute', right: '20%', top: '30%'}} */}
                 {/*Modifier entrie qu contiendra les trois meilleur score par une lecture du fichier scrore.json */}

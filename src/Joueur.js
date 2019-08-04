@@ -26,6 +26,9 @@ export default class Joueur {
     saveScore = () => {
         if(this._scores.current > this._scores.best)
             this._scores.best = this._scores.current
+        this._scores.current = 0;
+        //Refaire un recherche du meilleur score car celui-ci à peut être changer
+        // this._scores.best
         //Ecrire dans le fichier le score.json le score du joueur
         //Si c'est son meilleur score
     }

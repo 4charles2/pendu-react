@@ -25,7 +25,6 @@ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 class AlphaKeyboard extends Component {
     displayLetter(letter) {
         if(this.props.showLetter && !this.props.showLetter.letters.includes(letter)) {
-            console.log(this.props.showLetter.letters, this.props.showLetter.effect)
             return this.props.showLetter.effect
         } else
             return ''
